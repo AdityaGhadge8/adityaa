@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee This Sunday?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #yes-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #no-button {
+            background-color: #f44336;
+            color: white;
+        }
+
+        #emoji-container {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Coffee this Sunday?</h1>
+        <div class="buttons">
+            <button id="yes-button" onclick="confirmYes()">Yes</button>
+            <button id="no-button" onclick="increaseYesSizeAndAddEmojis()">No</button>
+        </div>
+        <div id="emoji-container"></div>
+    </div>
+    <script>
+        let yesButton = document.getElementById('yes-button');
+        let noButton = document.getElementById('no-button');
+        let emojiContainer = document.getElementById('emoji-container');
+
+        function confirmYes() {
+            window.location.href = "confirmed.html";
+        }
+
+        function increaseYesSizeAndAddEmojis() {
+            // Increase the size of the Yes button
+            let currentSize = parseInt(window.getComputedStyle(yesButton).fontSize);
+            yesButton.style.fontSize = (currentSize + 4) + 'px';
+
+            // Add emojis to the emoji container
+            emojiContainer.innerHTML += '🥺🥺🥺';
+        }
+    </script>
+</body>
+</html>
